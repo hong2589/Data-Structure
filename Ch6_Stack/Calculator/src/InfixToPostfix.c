@@ -53,6 +53,9 @@ void ConvToRPNExp(char exp[]){
 					convExp[idx++] = popOp;
 				}
 			}
+			else if (tok == ' '){
+				continue;
+			}
 			else { // '+', '-', '*', '/' -> Pop if the operator of the opStack precedes tok, push tok into opStack
 				while (!IsEmpty(&opStack) && WhoPrecOp(Peek(&opStack), tok) >= 0){
 					popOp = Pop(&opStack);
