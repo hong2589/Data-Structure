@@ -1,6 +1,7 @@
 {
 	"files.associations": {
 		"stdio.h": "c",
-		"infixtopostfix.h": "c"
+		"infixtopostfix.h": "c",
+		"stack": "c"
 	}
 }
