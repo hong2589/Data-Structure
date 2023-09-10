@@ -5,6 +5,7 @@
 		"stack": "c",
 		"iostream": "cpp",
 		"queue": "cpp",
-		"xiosbase": "c"
+		"xiosbase": "c",
+		"binarysearchtree.h": "c"
 	}
 }
