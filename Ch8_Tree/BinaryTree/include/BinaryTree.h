@@ -3,27 +3,27 @@
 
 typedef int Data;
 
-typedef struct _node {
+typedef struct _tree {
 	Data data;
-	struct _node* left;
-	struct _node* right;
-} Node;
+	struct _tree* left;
+	struct _tree* right;
+} Tree;
 
-Node* MakeNode(void);
-Data GetData(Node* node);
-void SetData(Node* node, Data data);
+Tree* MakeTree(void);
+Data GetData(Tree* node);
+void SetData(Tree* node, Data data);
 
-Node* GetLeftSubTree(Node* node);
-Node* GetRightSubTree(Node* node);
+Tree* GetLeftSubTree(Tree* node);
+Tree* GetRightSubTree(Tree* node);
 
-void MakeLeftSubTree(Node* main, Node* sub);
-void MakeRightSubTree(Node* main, Node* sub);
-void DeleteTree(Node* node);
+void MakeLeftSubTree(Tree* main, Tree* sub);
+void MakeRightSubTree(Tree* main, Tree* sub);
+void DeleteTree(Tree* node);
 
 // Traverse
 typedef void (*VisitFuncPtr)(Data data);
-void PreorderTraverse(Node* node, VisitFuncPtr action);
-void InorderTraverse(Node* node, VisitFuncPtr action);
-void PostorderTraverse(Node* node, VisitFuncPtr action);
+void PreorderTraverse(Tree* node, VisitFuncPtr action);
+void InorderTraverse(Tree* node, VisitFuncPtr action);
+void PostorderTraverse(Tree* node, VisitFuncPtr action);
 
 #endif

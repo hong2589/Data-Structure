@@ -2,6 +2,9 @@
 	"files.associations": {
 		"stdio.h": "c",
 		"infixtopostfix.h": "c",
-		"stack": "c"
+		"stack": "c",
+		"iostream": "cpp",
+		"queue": "cpp",
+		"xiosbase": "c"
 	}
 }

@@ -2,44 +2,44 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-Node* MakeNode(void){
-	Node* newNode = (Node*)malloc(sizeof(Node));
+Tree* MakeTree(void){
+	Tree* newNode = (Tree*)malloc(sizeof(Tree));
 	newNode->left = NULL;
 	newNode->right = NULL;
 	return newNode;
 }
 
-Data GetData(Node* node){
+Data GetData(Tree* node){
 	return node->data;
 }
 
-void SetData(Node* node, Data data){
+void SetData(Tree* node, Data data){
 	node->data = data;
 }
 
-Node* GetLeftSubTree(Node* node){
+Tree* GetLeftSubTree(Tree* node){
 	return node->left;
 }
 
-Node* GetRightSubTree(Node* node){
+Tree* GetRightSubTree(Tree* node){
 	return node->right;
 }
 
-void MakeLeftSubTree(Node* main, Node* sub){
+void MakeLeftSubTree(Tree* main, Tree* sub){
 	if (main->left != NULL){
 		free(main->left);
 	}
 	main->left = sub;
 }
 
-void MakeRightSubTree(Node* main, Node* sub){
+void MakeRightSubTree(Tree* main, Tree* sub){
 	if (main->right != NULL){
 		free(main->right);
 	}
 	main->right = sub;
 }
 
-void DeleteTree(Node* node){
+void DeleteTree(Tree* node){
 	// Use post-traverse
 	if (node == NULL) return;
 	DeleteTree(node->left);
@@ -47,21 +47,21 @@ void DeleteTree(Node* node){
 	free(node);
 }
 
-void InorderTraverse(Node* node, VisitFuncPtr action){
+void InorderTraverse(Tree* node, VisitFuncPtr action){
 	if (node == NULL) return;
 	InorderTraverse(node->left, action);
 	action(node->data);
 	InorderTraverse(node->right, action);
 }
 
-void PreorderTraverse(Node* node, VisitFuncPtr action){
+void PreorderTraverse(Tree* node, VisitFuncPtr action){
 	if (node == NULL) return;
 	action(node->data);
 	PreorderTraverse(node->left, action);
 	PreorderTraverse(node->right, action);
 }
 
-void PostorderTraverse(Node* node, VisitFuncPtr action){
+void PostorderTraverse(Tree* node, VisitFuncPtr action){
 	if (node == NULL) return;
 	PostorderTraverse(node->left, action);
 	PostorderTraverse(node->right, action);
