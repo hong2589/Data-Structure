@@ -6,6 +6,7 @@
 		"iostream": "cpp",
 		"queue": "cpp",
 		"xiosbase": "c",
-		"binarysearchtree.h": "c"
+		"binarysearchtree.h": "c",
+		"algraphbfs.h": "c"
 	}
 }
